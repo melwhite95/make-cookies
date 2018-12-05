@@ -6,80 +6,33 @@
   </head>
   <body>
       <h1 id="cookie-counter">0</h1>
+
       <button id="cookie-clicker">Make Cookies</button>
 
       <hr>
       <h2>Shop</h2>
       <hr>
+
       <p>Click Power</p>
+
 <p>Produces <span id="click-power-multiple">1</span> cookie(s) per click</p>
-<button id="buy-click-power">Buy for <span id="click-power-price">50</span></button>
+<button id="buy-click-power">Buy for <span id="click-power-price">100</span></button>
 <p>level: <span id="click-power-level">1</span></p>
-<script src="./scripts.js"></script>
-<script>
-//declare default variables
-let cookieCount = 0;
-let clickPower = 1;
-let clickPowerPriceAmount = 50;
-let clickPowerLevelNumber = 1;
 
-    //declare DOM variables
-    let cookieCounter = document.getElementsByName('cookie-counter');
-    let cookieClicker = document.getElementById('cookie-clicker')
-    let buyClickPower = document.getElementById('buy-click-power');
-    let clickPowerPrice = document.getElementById('click-power-price');
-    let clickPowerLevel = document.getElementById('click-power-level');
-    let clickPowerMultiple = document.getElementById('click-power-multiple');
+<!---GRANDMAS-->
+<hr>
+<p>Grandmas</p>
+<p>Producing <span id="grandma-multiple">0</span> cookies per second!</p>
+<button id="buy-grandma">Buy for <span id="grandma-price">350</span></button>
+<p>Level: <span id="grandma-level">0</span></p>
 
+<!--Cookie Manufacturing Facility-->
+<hr>
+<p>Cookie Manufacturing Facility</p>
+<p>Producing <span id="facility-multiple">0</span> cookies per second!</p>
+<button id="buy-facility">Buy for <span id="facility-price">156000</span></button>
+<p>Level: <span id="facility-level">0</span></p>
 
-
-    //everytime a user clicks the button, their cookies are increased by the value of their clickPower.
-cookieClicker.addEventListener("click", function() {
-  cookieCount = cookieCount + clickPower;
-  refreshCookieCount()
-})
-if (cookieCount >= clickPowerPriceAmount) {
-  //subtract cookies from the price of the item
-  cookieCount -= clickPowerPriceAmount;
-  refreshCookieCount()
-}
-
-    //Buy click power
-    buyClickPower.addEventListener("click", function() {
-      if (cookieCount >= clickPowerPriceAmount) {
-        console.log("Succesfully bought my guy");
-      } else {
-        console.log("Tragic my guy not enough come back when you have the paper");
-      }
-      if (cookieCount >= clickPowerPriceAmount) {
-        //subtract cookies from the price of the item
-        cookieCount -= clickPowerPriceAmount;
-        refreshCookieCount()
-
-    //Update click price
-    clickPowerPrice = Math.floor(clickPowerPrice * 1.33);
-
-    //update Click Power
-    clickPower += 1;
-
-        //Upgrade power level
-        clickPowerLevelNumber += 1;
-
-        //refresh shop item
-        refreshPowerClick();
-
-    })
-
-
-
-let refreshPowerClick = function() {
-    clickPowerLevel.innerHTML = clickPowerLevelNumber;
-   clickPowerPrice.innerHTML = clickPowerPriceAmount;
-   clickPowerMultiple.innerHTML = clickPower;
-}
-
-
-  cookieCounter.innerHTML = cookieCount;
-</script>
+<script src="./script.js"></script>
   </body>
 </html>
