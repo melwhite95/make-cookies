@@ -15,6 +15,7 @@
 <p>Produces <span id="click-power-multiple">1</span> cookie(s) per click</p>
 <button id="buy-click-power">Buy for <span id="click-power-price">50</span></button>
 <p>level: <span id="click-power-level">1</span></p>
+<script src="./scripts.js"></script>
 <script>
 //declare default variables
 let cookieCount = 0;
@@ -55,6 +56,12 @@ if (cookieCount >= clickPowerPriceAmount) {
         cookieCount -= clickPowerPriceAmount;
         refreshCookieCount()
 
+    //Update click price
+    clickPowerPrice = Math.floor(clickPowerPrice * 1.33);
+
+    //update Click Power
+    clickPower += 1;
+
         //Upgrade power level
         clickPowerLevelNumber += 1;
 
@@ -66,8 +73,13 @@ if (cookieCount >= clickPowerPriceAmount) {
 
 
 let refreshPowerClick = function() {
-  clickPowerLevel.innterHTML = clickPowerLevelNumber;
+    clickPowerLevel.innerHTML = clickPowerLevelNumber;
+   clickPowerPrice.innerHTML = clickPowerPriceAmount;
+   clickPowerMultiple.innerHTML = clickPower;
 }
+
+
+  cookieCounter.innerHTML = cookieCount;
 </script>
   </body>
 </html>
